@@ -1,0 +1,6 @@
+{
+  "/lab/page": "app/lab/page.js",
+  "/api/podcast-rss/route": "app/api/podcast-rss/route.js",
+  "/page": "app/page.js",
+  "/contextus/page": "app/contextus/page.js"
+}
