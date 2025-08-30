@@ -92,8 +92,13 @@ export default function RootLayout({
                 url: siteUrl,
                 logo: `${siteUrl}/logo-mark.png`,
                 sameAs: [
-                  'https://www.linkedin.com/company/core-ledger-technology',
-                  'https://x.com/Coreledger_tech'
+                  'https://www.linkedin.com/company/core-ledger-technology/',
+                  'https://x.com/Coreledger_tech',
+                  'https://github.com/Coreledger-tech',
+                  'https://medium.com/@coreledger_tech',
+                  'https://open.spotify.com/show/1OeoH2DuTz6ovJAKqvUqGy',
+                  'https://podcasts.apple.com/ca/podcast/coreledger-tech/id1832790756',
+                  'https://www.facebook.com/people/Coreledger-Technologies/61563241262398/'
                 ]
               },
               {

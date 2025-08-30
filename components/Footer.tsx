@@ -255,7 +255,7 @@ export default function Footer() {
               <Linkedin className="w-4 h-4" />
             </a>
             <a 
-              href="https://twitter.com/coreledger" 
+              href="https://x.com/Coreledger_tech" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center text-white/60 hover:text-white hover:bg-white/20 transition-all"
@@ -264,7 +264,7 @@ export default function Footer() {
               <Twitter className="w-4 h-4" />
             </a>
             <a 
-              href="https://podcasts.apple.com/podcast/coreledger-tech/id1234567890" 
+              href="https://podcasts.apple.com/us/podcast/coreledger-tech/id1832790756" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center text-white/60 hover:text-white hover:bg-white/20 transition-all"
@@ -311,7 +311,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center text-white/40 text-xs mt-6">
-          <p>© 2024 Coreledger Technologies. Open-source under MIT license.</p>
+          <p>© 2025 Coreledger Technologies Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>

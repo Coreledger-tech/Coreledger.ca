@@ -261,7 +261,7 @@ export default function Contact() {
                       <Github className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
                     </a>
                     <a
-                      href="https://linkedin.com/company/coreledger"
+                      href="https://www.linkedin.com/company/core-ledger-technology/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-[#002C3E] rounded-xl flex items-center justify-center hover:bg-[#0D9488] transition-colors group"
@@ -269,7 +269,7 @@ export default function Contact() {
                       <Linkedin className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
                     </a>
                     <a
-                      href="https://twitter.com/coreledger"
+                      href="https://x.com/Coreledger_tech"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-[#002C3E] rounded-xl flex items-center justify-center hover:bg-[#0D9488] transition-colors group"
