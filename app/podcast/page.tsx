@@ -9,7 +9,7 @@ import { format } from "date-fns";
 import AudioPlayer from "@/components/AudioPlayer";
 
 export default function Podcast() {
-  const [episodes, setEpisodes] = useState([]);
+  const [episodes, setEpisodes] = useState<PodcastEpisode[]>([]);
   const [playingEpisode, setPlayingEpisode] = useState<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
