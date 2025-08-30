@@ -56,7 +56,7 @@ export default function Careers() {
 
       if (response.ok) {
         setSubmitStatus('success');
-        setSubmitMessage(&apos;Thanks for your application! We&apos;ll review it and get back to you soon.&apos;);
+        setSubmitMessage('Thanks for your application! We\'ll review it and get back to you soon.');
         setFormData({ name: "", email: "", superpower: "", message: "" });
       } else {
         setSubmitStatus('error');
