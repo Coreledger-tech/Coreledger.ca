@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Users, Zap, Target, Send } from "lucide-react";
+import { Heart, Users, Zap, Target, Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function Careers() {
   const [formData, setFormData] = useState({
@@ -16,6 +16,19 @@ export default function Careers() {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  // Auto-dismiss success messages
+  useEffect(() => {
+    if (submitStatus === 'success') {
+      const timer = setTimeout(() => {
+        setSubmitStatus('idle');
+        setSubmitMessage('');
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus]);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
@@ -27,15 +40,34 @@ export default function Careers() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setSubmitMessage('');
     
-    // Here you would normally send to your backend
-    console.log("Form submission:", formData);
-    
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/send-career-application', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setSubmitMessage('Thanks for your application! We\'ll review it and get back to you soon.');
+        setFormData({ name: "", email: "", superpower: "", message: "" });
+      } else {
+        setSubmitStatus('error');
+        setSubmitMessage(result.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage('Network error. Please check your connection and try again.');
+    } finally {
       setIsSubmitting(false);
-      setFormData({ name: "", email: "", superpower: "", message: "" });
-      alert("Thank you! We'll be in touch soon.");
-    }, 1000);
+    }
   };
 
   const values = [
@@ -174,7 +206,7 @@ export default function Careers() {
           <div className="bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden animate-fade-up">
             <div className="bg-gradient-to-r from-[#0D9488] to-[#002C3E] p-8 text-white">
               <h3 className="font-heading text-2xl font-bold mb-2">
-                Ready to make an impact?
+                Career Application Form
               </h3>
               <p className="text-white/90">
                 Let's start a conversation about how you could contribute to our mission.
@@ -239,6 +271,21 @@ export default function Careers() {
                   className="border-gray-200 focus:border-[#0D9488] focus:ring-[#0D9488] h-32"
                 />
               </div>
+              
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <p className="text-sm font-medium">{submitMessage}</p>
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+                  <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+                  <p className="text-sm font-medium">{submitMessage}</p>
+                </div>
+              )}
               
               <Button
                 type="submit"
