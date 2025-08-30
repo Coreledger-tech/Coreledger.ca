@@ -7,7 +7,25 @@ import Link from "next/link";
 
 export default function Contextus() {
   return (
-    <div className="font-body">
+    <>
+      {/* Product JSON-LD for this route */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'SoftwareApplication',
+            name: 'Contextus',
+            applicationCategory: 'DeveloperApplication',
+            operatingSystem: 'Any',
+            url: 'https://coreledger.ca/contextus',
+            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', category: 'beta' },
+            description: 'Contextus by Coreledger Technologies: Lightweight SDK that scores, ranks, and trims LLM context so you cut token spend by up to 40% without harming quality.',
+            publisher: { '@type': 'Organization', name: 'Coreledger Technologies', url: 'https://coreledger.ca' }
+          }),
+        }}
+      />
+      <div className="font-body">
       {/* Hero */}
       <section className="py-24 bg-gradient-to-br from-[#F5F7F9] via-white to-[#F5F7F9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -57,7 +75,7 @@ export default function Contextus() {
             
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
               <p className="text-xl mb-6">
-                Have you ever worked tirelessly on a detailed software project, only to find yourself lost as it grows more complex? It's like trying to follow a story with missing pages—the more you progress, the more context you lose.
+                Have you ever worked tirelessly on a detailed software project, only to find yourself lost as it grows more complex? It's like trying to follow a story with missing pages, the more you progress, the more context you lose.
               </p>
               
               <p className="mb-6">
@@ -277,7 +295,7 @@ export default function Contextus() {
             </article>
 
             {/* Article 2 - Context Engineering SDK */}
-            <article className="group cursor-pointer" onClick={() => window.open('https://www.linkedin.com/pulse/beyond-prompt-crafting-introducing-contextus-context-coreledger-ljmnc', '_blank')}>
+            <article className="group cursor-pointer" onClick={() => window.open('https://www.linkedin.com/pulse/beyond-prompt-crafting-introducing-contextus-context-t7zfc?trk=public_post_feed-article-content', '_blank')}>
               <div className="bg-gradient-to-br from-[#0D9488] to-[#0f766e] rounded-xl p-8 text-white h-64 flex flex-col justify-between relative overflow-hidden group-hover:scale-105 transition-all duration-300 shadow-lg">
                 <div className="absolute inset-0 opacity-10">
                   <div className="w-24 h-24 border-2 border-white/20 rounded-lg absolute top-4 right-4 transform rotate-12"></div>
@@ -394,6 +412,7 @@ export default function Contextus() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
