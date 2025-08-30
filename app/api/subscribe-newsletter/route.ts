@@ -3,8 +3,11 @@ import { NextRequest, NextResponse } from 'next/server';
 const mailchimp = require('@mailchimp/mailchimp_marketing');
 
 // Configure Mailchimp
+if (!process.env.MAILCHIMP_API_KEY) {
+  throw new Error('MAILCHIMP_API_KEY environment variable is required');
+}
 mailchimp.setConfig({
-  apiKey: process.env.MAILCHIMP_API_KEY || '20baea538cc971ddf03ae78ce01315fd-us18',
+  apiKey: process.env.MAILCHIMP_API_KEY,
   server: process.env.MAILCHIMP_SERVER_PREFIX || 'us18', // e.g., 'us18'
 });
 
