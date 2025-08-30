@@ -56,7 +56,7 @@ export default function Careers() {
 
       if (response.ok) {
         setSubmitStatus('success');
-        setSubmitMessage('Thanks for your application! We\'ll review it and get back to you soon.');
+        setSubmitMessage(&apos;Thanks for your application! We&apos;ll review it and get back to you soon.&apos;);
         setFormData({ name: "", email: "", superpower: "", message: "" });
       } else {
         setSubmitStatus('error');
@@ -168,7 +168,7 @@ export default function Careers() {
               </h2>
               
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-                We're still in the early stages of building our team. Rather than posting specific job descriptions, we're looking for exceptional people who can define their own role and drive impact.
+                We&apos;re still in the early stages of building our team. Rather than posting specific job descriptions, we&apos;re looking for exceptional people who can define their own role and drive impact.
               </p>
               
               <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -199,7 +199,7 @@ export default function Careers() {
               Tell us about your superpower
             </h2>
             <p className="text-xl text-gray-600">
-              We don't have specific roles open right now, but we're always interested in connecting with exceptional people. Share what makes you unique.
+              We don&apos;t have specific roles open right now, but we&apos;re always interested in connecting with exceptional people. Share what makes you unique.
             </p>
           </div>
           
@@ -246,7 +246,7 @@ export default function Careers() {
               
               <div className="space-y-2">
                 <Label htmlFor="superpower" className="text-[#002C3E] font-medium">
-                  What's your superpower? *
+                  What&apos;s your superpower? *
                 </Label>
                 <Input
                   id="superpower"
@@ -318,7 +318,7 @@ export default function Careers() {
               Built for Remote
             </h2>
             <p className="text-xl text-white/90 leading-relaxed mb-8">
-              We're a distributed team that values flexibility, autonomy, and work-life integration. Great work happens when people have the freedom to do their best thinking.
+              We&apos;re a distributed team that values flexibility, autonomy, and work-life integration. Great work happens when people have the freedom to do their best thinking.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
@@ -333,7 +333,7 @@ export default function Careers() {
                   <span className="text-2xl">⏰</span>
                 </div>
                 <h3 className="font-heading font-bold mb-2">Flexible Hours</h3>
-                <p className="text-white/80 text-sm">Focus time when you're most productive</p>
+                <p className="text-white/80 text-sm">Focus time when you&apos;re most productive</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">

@@ -84,10 +84,10 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-up">
             <h1 className="font-heading text-5xl sm:text-6xl font-bold text-[#002C3E] mb-6">
-              Let's <span className="text-[#0D9488]">Connect</span>
+              Let&apos;s <span className="text-[#0D9488]">Connect</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Whether you're interested in our products, want to discuss a partnership, or have questions about our technology, we'd love to hear from you.
+              Whether you&apos;re interested in our products, want to discuss a partnership, or have questions about our technology, we&apos;d love to hear from you.
             </p>
           </div>
         </div>
