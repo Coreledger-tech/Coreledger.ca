@@ -126,7 +126,7 @@ export default function RootLayout({
                   {
                     '@type': 'ContactPoint',
                     contactType: 'sales',
-                    email: 'hello@coreledger.ca',
+                    email: 'info@coreledger.ca',
                     availableLanguage: ['en']
                   }
                 ],
