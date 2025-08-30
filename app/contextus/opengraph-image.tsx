@@ -28,8 +28,8 @@ export default async function OG() {
             left: 0,
             right: 0,
             bottom: 0,
-            opacity: 0.1,
-            background: 'repeating-linear-gradient(45deg, #0D9488, #0D9488 10px, transparent 10px, transparent 20px)',
+            opacity: 0.05,
+            background: 'linear-gradient(45deg, #0D9488 25%, transparent 25%, transparent 75%, #0D9488 75%)',
           }}
         />
         
