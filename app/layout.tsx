@@ -32,8 +32,9 @@ export const metadata: Metadata = {
     'Coreledger Technologies is a developer-first studio building intelligent software infrastructure. Our flagship, Contextus, trims and prioritizes LLM context so teams cut costs and boost accuracy—on cloud or self-hosted.',
   keywords: [
     'Coreledger', 'Contextus', 'context engineering', 'LLM context',
-    'AI tooling', 'RAG', 'vector search', 'developer infrastructure',
-    'self-hosted LLM', 'AI cost optimization'
+    'AI tooling', 'Kelvin Musodza', 'retrieval augmented generation', 'vector search', 
+    'developer infrastructure', 'self-hosted LLM', 'AI cost optimization',
+    'enterprise AI infrastructure', 'token spend optimization', 'Canada'
   ],
   authors: [
     { name: 'Coreledger Technologies', url: 'https://www.linkedin.com/company/core-ledger-technology' },
@@ -89,8 +90,29 @@ export default function RootLayout({
                 '@context': 'https://schema.org',
                 '@type': 'Organization',
                 name: 'Coreledger Technologies',
+                alternateName: 'Coreledger',
                 url: siteUrl,
                 logo: `${siteUrl}/logo-mark.png`,
+                foundingDate: '2022',
+                foundingLocation: {
+                  '@type': 'Place',
+                  name: 'Vancouver, British Columbia, Canada'
+                },
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Vancouver',
+                  addressRegion: 'BC',
+                  addressCountry: 'CA'
+                },
+                description: 'Developer-first studio building intelligent software infrastructure. Flagship product Contextus cuts AI token costs by 40% through context engineering.',
+                knowsAbout: [
+                  'Context Engineering',
+                  'Large Language Models', 
+                  'AI Cost Optimization',
+                  'Retrieval Augmented Generation',
+                  'Enterprise AI Infrastructure',
+                  'Token Spend Optimization'
+                ],
                 sameAs: [
                   'https://www.linkedin.com/company/core-ledger-technology/',
                   'https://x.com/Coreledger_tech',
@@ -99,24 +121,61 @@ export default function RootLayout({
                   'https://open.spotify.com/show/1OeoH2DuTz6ovJAKqvUqGy',
                   'https://podcasts.apple.com/ca/podcast/coreledger-tech/id1832790756',
                   'https://www.facebook.com/people/Coreledger-Technologies/61563241262398/'
-                ]
+                ],
+                contactPoint: [
+                  {
+                    '@type': 'ContactPoint',
+                    contactType: 'sales',
+                    email: 'hello@coreledger.ca',
+                    availableLanguage: ['en']
+                  }
+                ],
+                founder: {
+                  '@type': 'Person',
+                  name: 'Kelvin Musodza',
+                  url: 'https://www.linkedin.com/in/kelvin-musodza/'
+                }
               },
               {
                 '@context': 'https://schema.org',
                 '@type': 'SoftwareApplication',
                 name: 'Contextus',
+                alternateName: 'Context Engineering Platform',
                 applicationCategory: 'DeveloperApplication',
                 operatingSystem: 'Web',
                 url: 'https://contextus.coreledger.ca/',
+                softwareVersion: 'Private Alpha',
+                releaseNotes: 'Cut AI token costs by up to 40% without model upgrades',
+                features: [
+                  'Context trimming and ranking',
+                  'Token cost reduction up to 40%',
+                  'No model upgrades required',
+                  'Built-in guardrails',
+                  'Real-time cost analytics',
+                  'Enterprise-ready for self-hosted AI'
+                ],
                 offers: {
                   '@type': 'Offer',
                   price: '0',
                   priceCurrency: 'USD',
-                  description: 'Private alpha / waitlist'
+                  description: 'Private alpha access - Join 50+ early testers'
                 },
                 publisher: { '@type': 'Organization', name: 'Coreledger Technologies', url: siteUrl },
-                description:
-                  'Contextus trims, ranks, and structures LLM context to cut costs up to 40% while improving accuracy. Enterprise-ready for self-hosted AI.'
+                description: 'Contextus trims, ranks, and structures LLM context to cut costs up to 40% while improving accuracy. Enterprise-ready for self-hosted AI.'
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'WebSite',
+                name: 'Coreledger Technologies',
+                url: siteUrl,
+                potentialAction: {
+                  '@type': 'SearchAction',
+                  target: {
+                    '@type': 'EntryPoint',
+                    urlTemplate: `${siteUrl}/search?q={search_term_string}`
+                  },
+                  'query-input': 'required name=search_term_string'
+                }
               },
               {
                 '@context': 'https://schema.org',
@@ -124,7 +183,24 @@ export default function RootLayout({
                 name: 'Coreledger Tech',
                 url: `${siteUrl}/podcast`,
                 inLanguage: 'en-CA',
-                publisher: { '@type': 'Organization', name: 'Coreledger Technologies', url: siteUrl }
+                description: 'Deep dives into emerging technologies, product development, and the future of software engineering.',
+                publisher: { '@type': 'Organization', name: 'Coreledger Technologies', url: siteUrl },
+                webFeed: 'https://anchor.fm/s/1083dc404/podcast/rss'
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Person',
+                name: 'Kelvin Musodza',
+                jobTitle: 'Software Engineer',
+                worksFor: {
+                  '@type': 'Organization',
+                  name: 'Coreledger Technologies'
+                },
+                url: 'https://www.linkedin.com/in/kelvin-musodza/',
+                sameAs: [
+                  'https://www.linkedin.com/in/kelvin-musodza/',
+                  'https://github.com/kmusodza'
+                ]
               }
             ])
           }}
