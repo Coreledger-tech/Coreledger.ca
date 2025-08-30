@@ -10,7 +10,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [latestEpisode, setLatestEpisode] = useState<PodcastEpisode | null>(null);
 
   useEffect(() => {
@@ -50,7 +50,8 @@ export default function Home() {
               Invent. Build. <span className="text-[#0D9488]">Iterate.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Coreledger Technologies creates category-defining tech products—starting with Contextus.
+            Coreledger builds practical, developer-first AI products. Contextus cuts waste from LLM context so teams ship faster and spend less.
+            Now you can get sharper results at a fraction of the cost.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
@@ -93,10 +94,10 @@ export default function Home() {
                 <Database className="w-6 h-6 text-[#0D9488]" />
               </div>
               <h3 className="font-heading text-2xl font-bold text-[#002C3E] mb-4">
-                Knowledge Graphs
+                Context & Data Models
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Semantic data structures that capture relationships and context, enabling AI systems to understand and reason about complex information domains.
+              Structures that keep facts straight and relationships intact, so your AI answers with context, not guesses.
               </p>
             </div>
             
@@ -108,7 +109,7 @@ export default function Home() {
                 AI Tooling
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Developer-first platforms and APIs that make advanced AI capabilities accessible, scalable, and production-ready for modern applications.
+                SDKs and APIs that plug into your stack in minutes, not months. Now you can optimize GPT or Claude without upgrading models.
               </p>
             </div>
             
@@ -117,10 +118,10 @@ export default function Home() {
                 <GitBranch className="w-6 h-6 text-[#0D9488]" />
               </div>
               <h3 className="font-heading text-2xl font-bold text-[#002C3E] mb-4">
-                Developer Infrastructure
+                Production Foundations
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                High-performance systems and frameworks that handle the complexity of data processing, allowing developers to focus on innovation.
+                High-performance pipelines, observability, and guardrails that scale from a single dev to the whole org—without surprise costs.
               </p>
             </div>
           </div>
@@ -178,7 +179,7 @@ export default function Home() {
               From fintech to frontier tech
             </h2>
             <p className="text-xl text-gray-600">
-              Our evolution into a full-stack technology studio
+              How we got here & why we're obsessed with reliability.
             </p>
           </div>
           
@@ -192,7 +193,7 @@ export default function Home() {
                   <div className="text-[#0D9488] font-bold text-lg mb-2">2019–2024</div>
                   <h3 className="font-heading text-xl font-bold text-[#002C3E] mb-3">Fintech Foundation</h3>
                   <p className="text-gray-600">
-                    Built robust financial technology solutions, learning the intricacies of data processing, regulatory compliance, and high-performance systems.
+                    We built for regulated markets: matching engines, reconciliation, and hard data problems. It taught us discipline, accuracy, latency, and cost control.
                   </p>
                 </div>
               </div>
@@ -203,7 +204,7 @@ export default function Home() {
                   <div className="text-[#0D9488] font-bold text-lg mb-2">2025+</div>
                   <h3 className="font-heading text-xl font-bold text-[#002C3E] mb-3">Technology Studio</h3>
                   <p className="text-gray-600">
-                    Expanding into AI, knowledge graphs, and developer infrastructure. Creating products that push the boundaries of what's possible.
+                  We’re applying those muscles to AI. First with Contextus, then a suite of developer tools that make large models practical in production.    
                   </p>
                 </div>
               </div>
@@ -453,7 +454,7 @@ export default function Home() {
               Built by engineers, for engineers
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Founded with the belief that great technology products emerge from deep technical understanding and relentless iteration. We combine years of fintech expertise with cutting-edge research to build tools that developers actually want to use.
+              We’re product-minded engineers. We ship, measure, and shave off the rough edges until it works in the real world. Our fintech years trained us to value correctness and cost, so every tool we build helps teams move faster and trust the output.
             </p>
             <Link href="/contact">
               <Button 
