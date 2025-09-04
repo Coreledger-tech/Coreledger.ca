@@ -16,8 +16,8 @@ export interface PodcastEpisodeData {
 export class PodcastEpisode {
   static async list(sortBy?: string): Promise<PodcastEpisodeData[]> {
     try {
-      // Fetch from our RSS API endpoint
-      const response = await fetch('/api/podcast-rss');
+      // Fetch from our RSS API endpoint with cache-busting query to ensure freshness
+      const response = await fetch(`/api/podcast-rss?_=${Date.now()}`, { cache: 'no-store' });
       
       if (!response.ok) {
         throw new Error('Failed to fetch RSS feed');

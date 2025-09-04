@@ -6,6 +6,8 @@ export async function GET() {
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; Coreledger-Bot/1.0)',
       },
+      // Ensure we always fetch fresh RSS (avoid edge/runtime caches)
+      cache: 'no-store',
     });
 
     if (!response.ok) {
@@ -18,7 +20,8 @@ export async function GET() {
       status: 200,
       headers: {
         'Content-Type': 'application/xml',
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400', // Cache for 1 hour
+        // Disable caching so new episodes appear immediately
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
       },
     });
   } catch (error) {
